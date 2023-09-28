@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scione - timer</title>
+</head>
+<body>
+  <script>
+    const currentTime = new Date();
+    const newYear = new Date(currentTime.getFullYear() + 1, 0, 1); // 1 января следующего года
+    const timeLeft = newYear - currentTime;
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    alert(days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds")
+  </script>
+</body>
+</html>
